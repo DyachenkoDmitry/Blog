@@ -14,9 +14,9 @@ namespace Blog.WebUI
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
+                name: null,
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Articles", action = "ShowArticles", id = UrlParameter.Optional }
             );
         }
     }
