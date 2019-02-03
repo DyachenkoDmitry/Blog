@@ -1,7 +1,25 @@
-﻿#scrollUp {
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+html, body {
+    height: 100%;
+    width: 100%;  
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+section {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    padding-bottom: 20px;
+}
+#scrollUp {
     display: none; 
     position: fixed; 
-    bottom: 60px;
+    bottom: 80px;
     right: 20px;
     z-index: 99; 
     border: none; 
@@ -16,4 +34,28 @@
 
 #scrollUp:hover {
     background-color: #6495ed; 
+}
+
+.comment {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.send-message {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+.field-validation-error {
+    color: red;
+}
+.footer {
+    position: relative;
+    height: 60px;
+    margin-top: 30px;
+    background-color: #1e90ff;
+}
+.feedback {
+    display: block;
+    margin-top: 10px;
 }

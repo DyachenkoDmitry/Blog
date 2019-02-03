@@ -14,25 +14,36 @@
     <nav class="navbar navbar-dark bg-primary">
         <a class="navbar-brand" href="#">@ViewBag.Title</a>
     </nav>
-    <div class="container">
-        <div class="row panel">
-            <div class="col-10">
-                @RenderBody()
-            </div>
-            <div id="genres" class="col-2">
-                @Html.ActionLink("Home", "ShowArticles", "Articles", new { area = "" }, new { @class = "btn btn-block btn-default btn-lg" })
-                @Html.ActionLink("Comments", "ShowComments", "Comments", new { area = "" }, new { @class = "btn btn-block btn-default btn-lg" })
-                @Html.ActionLink("Home", "ShowArticles", "Articles", new { area = "" }, new { @class = "btn btn-block btn-default btn-lg" })
+    <section>
+        <div class="container">
+            <div class="row panel">
+                <div class="col-10">
+                    @RenderBody()
+                </div>
+                <div id="genres" class="col-2">
+                    @Html.ActionLink("Home", "ShowArticles", "Articles", new { area = "" }, new { @class = "btn btn-block btn-default btn-lg" })
+                    @Html.ActionLink("Comments", "ShowComments", "Comments", new { area = "" }, new { @class = "btn btn-block btn-default btn-lg" })
+                    @Html.ActionLink("Feedback", "ShowFeedback", "Feedback", new { area = "" }, new { @class = "btn btn-block btn-default btn-lg" })
+                </div>
             </div>
         </div>
-    </div>
-    <footer class="page-footer font-small bg-primary">
-        <div class="footer-copyright text-center py-3">
+    </section>
+    <div class="footer">
+        <div class="text-center py-3">
             © 2019 Copyright:
             <a href="/" class="text-danger"> Blog.com</a>
         </div>
-    </footer>
+    </div>
+    @*<footer class="bg-primary">
+            <div class="text-center py-3">
+                © 2019 Copyright:
+                <a href="/" class="text-danger"> Blog.com</a>
+            </div>
+        </footer>*@
+
     <button onclick="topFunction()" id="scrollUp" title="Go to top">Top</button>
     <script type="text/javascript" src="@Url.Content("~/Scripts/scrollUp.js")"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
 </body>
 </html>

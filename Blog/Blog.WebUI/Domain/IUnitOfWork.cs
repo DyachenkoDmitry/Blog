@@ -6,5 +6,6 @@ namespace Blog.WebUI.Domain
     {
         IArticleRepository Articles { get; }
         ICommentRepository Comments { get; }
+        // Some method Commit if we use EF or smth else..
     }
 }

@@ -1,0 +1,18 @@
+﻿@using Blog.WebUI.Helpers.Enum
+@model Blog.WebUI.ViewModel.FeedBack.FeedbackToDisplayViewModel
+@{
+    ViewBag.Title = "Congratulate you! You have filled anything successfully!";
+}
+<div class="feedback">
+    <b>Name:</b> @Model.Author<br>
+    <b>Gender:</b> @Model.Gender.GetDisplayName().ToString()<br>
+    <b>Improvements:</b> @{
+        foreach (var improve in @Model.Improvements)
+        {
+            if (improve.IsChecked)
+            {
+               <span>@improve.Display </span>
+            }
+        }
+    }
+</div>

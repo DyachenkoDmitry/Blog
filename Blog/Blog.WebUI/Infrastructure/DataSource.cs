@@ -8,9 +8,9 @@ namespace Blog.WebUI.Infrastructure
         public List<Article> Articles { get; private set; }
         public List<Comment> Comments { get; private set; }
 
-        public DataSource(int amount = 10) => Seed(amount);
+        public DataSource(int amountArticles = 10, int amountComments = 4) => Seed(amountArticles, amountComments);
 
-        private void Seed(int amount)
+        private void Seed(int amountArticles, int amountComments)
         {
             var articleFaker = new Faker<Article>("en")
                 .RuleFor(o => o.ArticleId, f => f.IndexVariable)
@@ -24,8 +24,8 @@ namespace Blog.WebUI.Infrastructure
                 .RuleFor(o => o.DatePublished, f => f.Date.Recent())
                 .RuleFor(o => o.Content, f => f.Lorem.Paragraphs(1));
 
-            Articles = articleFaker.Generate(amount);
-            Comments = commentFaker.Generate(amount);
+            Articles = articleFaker.Generate(amountArticles);
+            Comments = commentFaker.Generate(amountComments);
         }
     }
 }

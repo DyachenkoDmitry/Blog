@@ -1,0 +1,56 @@
+﻿@using Blog.WebUI.Extensions.Enum
+@model Blog.WebUI.ViewModel.FeedBack.FeedbackToDisplayViewModel
+
+@{
+    ViewBag.Title = "Here you can feedback.";
+}
+<div class="feedback">
+    @using (Html.BeginForm("ShowFeedback", "Feedback"))
+    {
+        <div class="form-group row">
+            @Html.LabelFor(m => Model.Author, "Author: ", new { @class = "col-sm-2 col-form-label" })
+            <div class="col-sm-10">
+                @Html.TextBoxFor(m => Model.Author, new { @class = "form-control", type = "text", placeholder = "Type your name" })
+                @Html.ValidationMessageFor(m => Model.Author)
+            </div>
+        </div>
+        <fieldset class="form-group">
+            <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Gender: </legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        @Html.RadioButtonFor(m => Model.Gender, Gender.Male, new { @class = "form-check-input", value = Gender.Male, @checked = "checked", id = $"gender{Gender.Male}" })
+                        @Html.LabelFor(g => Model.Gender, "Male", new { @class = "form-check-label" })
+                        @Html.ValidationMessageFor(m => Model.Gender)
+                    </div>
+                    <div class="form-check">
+                        @Html.RadioButtonFor(m => m.Gender, Gender.Female, new { @class = "form-check-input", value = Gender.Male, id = $"gender{Gender.Male}" })
+                        @Html.LabelFor(g => Model.Gender, "Female", new { @class = "form-check-label" })
+                        @Html.ValidationMessageFor(m => Model.Gender)
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group row">
+            <div class="col-sm-2">What would you change on the web-site?</div>
+            <div class="col-sm-10">
+                @{for (int i = 0; i < Model.Improvements.Count; i++)
+                    {
+                        <div class="form-check">
+                            @Html.CheckBoxFor(model => Model.Improvements[i].IsChecked, new { @class = "form-check-input" })
+                            @Html.HiddenFor(model => Model.Improvements[i].ImprovementId)
+                            @Html.HiddenFor(model => Model.Improvements[i].Display)
+                            @Html.LabelFor(model => Model.Improvements[i].IsChecked, $"{Model.Improvements[i].Display}", new { @class = "form-check-label" })
+                            @Html.ValidationMessageFor(model => Model.Improvements[i].IsChecked)
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary float-left">Send request</button>
+            </div>
+        </div>
+    }
+</div>
