@@ -2,19 +2,15 @@
     padding: 0;
     margin: 0;
 }
-html, body {
+html{
     height: 100%;
-    width: 100%;  
 }
-html {
+body {
     position: relative;
     min-height: 100%;
 }
-section {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    padding-bottom: 20px;
+section#main {
+    padding-bottom: 60px;
 }
 #scrollUp {
     display: none; 
@@ -38,7 +34,6 @@ section {
 
 .comment {
     display: block;
-    margin-top: 10px;
     margin-bottom: 20px;
 }
 .send-message {
@@ -50,12 +45,23 @@ section {
     color: red;
 }
 .footer {
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     height: 60px;
-    margin-top: 30px;
     background-color: #1e90ff;
 }
-.feedback {
-    display: block;
+.content {
     margin-top: 10px;
+}
+.features {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+}
+.list-features {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+
 }

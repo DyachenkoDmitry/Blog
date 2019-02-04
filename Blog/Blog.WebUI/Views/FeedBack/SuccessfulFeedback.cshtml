@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Congratulate you! You have filled anything successfully!";
 }
-<div class="feedback">
+
     <b>Name:</b> @Model.Author<br>
     <b>Gender:</b> @Model.Gender.GetDisplayName().ToString()<br>
     <b>Improvements:</b> @{
@@ -15,4 +15,3 @@
             }
         }
     }
-</div>

@@ -3,23 +3,20 @@
 @{
     ViewBag.Title = "Here you can read articles.";
 }
+    @foreach (var article in Model.Articles)
+    {
+        <div class="card">
+            <h5 class="card-header">@article.Author - @article.Title </h5>
 
-@foreach (var article in Model.Articles)
-{
-    <div class="card">
-        <h5 class="card-header">@article.Author - @article.Title </h5>
-
-        <div class="card-body">
-            <p class="card-text"> @article.Content</p>
-            <span id="price" class="float-right badge badge-primary"></span>
-            @using (Html.BeginForm("/", "SomeController"))
-            {
-                <div class="float-right">
-                </div>
-                <button type="button" class="btn btn-primary">Read more</button>
-            }
+            <div class="card-body">
+                <p class="card-text"> @article.Content</p>
+                <span id="price" class="float-right badge badge-primary"></span>
+                @using (Html.BeginForm("/", "SomeController"))
+                {
+                    <div class="float-right"></div>
+                    <button type="button" class="btn btn-primary">Read more</button>
+                }
+            </div>
         </div>
-    </div>
-    <br />
-}
-
+        <br />
+    }

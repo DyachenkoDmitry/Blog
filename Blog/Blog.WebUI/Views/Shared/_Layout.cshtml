@@ -10,20 +10,22 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
+    
 
-    <nav class="navbar navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">@ViewBag.Title</a>
-    </nav>
-    <section>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a href="/"><img src="~/Images/logo.png" width="108" height="30" alt="Logo"/></a>
+    <a href="/" class="navbar-brand">@ViewBag.Title</a>
+</nav>
+    <section id="main">
         <div class="container">
             <div class="row panel">
                 <div class="col-10">
                     @RenderBody()
                 </div>
-                <div id="genres" class="col-2">
-                    @Html.ActionLink("Home", "ShowArticles", "Articles", new { area = "" }, new { @class = "btn btn-block btn-default btn-lg" })
-                    @Html.ActionLink("Comments", "ShowComments", "Comments", new { area = "" }, new { @class = "btn btn-block btn-default btn-lg" })
-                    @Html.ActionLink("Feedback", "ShowFeedback", "Feedback", new { area = "" }, new { @class = "btn btn-block btn-default btn-lg" })
+                <div id="menu" class="col-2">
+                    @Html.ActionLink("Home", "ShowArticles", "Articles", new { area = "" }, new { @class = "btn btn-outline-success btn-lg btn-block" })
+                    @Html.ActionLink("Comments", "ShowComments", "Comments", new { area = "" }, new { @class = "btn btn-outline-success btn-lg btn-block" })
+                    @Html.ActionLink("Feedback", "ShowFeedback", "Feedback", new { area = "" }, new { @class = "btn btn-outline-success btn-lg btn-block" })
                 </div>
             </div>
         </div>

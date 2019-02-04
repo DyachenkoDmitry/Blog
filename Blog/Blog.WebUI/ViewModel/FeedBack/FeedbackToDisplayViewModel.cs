@@ -21,14 +21,23 @@ namespace Blog.WebUI.ViewModel.FeedBack
                 {
                     ImprovementId = 0,
                     Display = "More articles"
-                }
-            );
+                });
             Improvements.Add(new Improvement
                 {
                     ImprovementId = 1,
-                    Display = "More songs"
-                }
-            );
+                    Display = "More authors"
+                });
+            Improvements.Add(new Improvement
+                {
+                    ImprovementId = 2,
+                    Display = "Improve design"
+                });
+            Improvements.Add(new Improvement
+                {
+                    ImprovementId = 3,
+                    Display = "Add categories of articles"
+                });
+            
         }
 
     }

@@ -170,6 +170,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Enum\EnumExtensions.cs" />
+    <Compile Include="Helpers\Enum\ListTags.cs" />
+    <Compile Include="Helpers\HelpersToView\Helpers.cs" />
     <Compile Include="Infrastructure\DataSource.cs" />
     <Compile Include="Infrastructure\Implementation\ArticleRepository.cs" />
     <Compile Include="Infrastructure\Implementation\CommentRepository.cs" />
@@ -191,6 +193,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\logo.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
